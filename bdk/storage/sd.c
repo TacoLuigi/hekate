@@ -100,10 +100,9 @@ int sd_init_retry(bool power_cycle)
 	}
 
 	// Get init parameters.
-	switch (sd_mode)
-	{
-	case SD_INIT_FAIL: // Reset to max.
-		return 0;
+	sd_mode = SD_UHS_SDR104;
+		type = SDHCI_TIMING_UHS_SDR104;
+		break;
 
 	case SD_1BIT_HS25:
 		bus_width = SDMMC_BUS_WIDTH_1;
